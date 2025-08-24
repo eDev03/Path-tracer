@@ -184,7 +184,7 @@ impl Film {
     pub fn create_pixels(&self, scale: f64) -> Box<[RGBf64]> {
         let mut image = vec![RGBf64::ZERO; self.image_size[0] * self.image_size[1]];
         for (img_p, p) in image.iter_mut().zip(self.splat_pixels.iter()) {
-            *img_p += p.rgb.get_cloned().unwrap() * scale;
+            *img_p += *p.rgb.lock().unwrap() * scale;
         }
         for tile in self.tiles.iter() {
             for (p, tile_index) in tile.iter() {
@@ -198,7 +198,7 @@ impl Film {
         let mut data = vec![0; self.image_size[0] * self.image_size[1] * 4];
 
         for ([r, g, b, a], p) in data.array_chunks_mut().zip(self.splat_pixels.iter()) {
-            let rgb = p.rgb.get_cloned().unwrap() * scale;
+            let rgb = *p.rgb.lock().unwrap() * scale;
             *r = (rgb[0].powf(1.0 / 2.2).clamp(0.0, 1.0) * 255.999) as u8;
             *g = (rgb[1].powf(1.0 / 2.2).clamp(0.0, 1.0) * 255.999) as u8;
             *b = (rgb[2].powf(1.0 / 2.2).clamp(0.0, 1.0) * 255.999) as u8;

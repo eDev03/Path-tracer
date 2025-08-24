@@ -70,7 +70,7 @@ impl STree {
             {
                 let mut left = STreeNode {
                     sampler: node.sampler.clone(),
-                    collector: Mutex::new(node.collector.get_cloned().unwrap()),
+                    collector: Mutex::new(node.collector.lock().unwrap().clone()),
                     left: 0,
                     right: 0,
                     split_axis: (node.split_axis + 1) % 3,

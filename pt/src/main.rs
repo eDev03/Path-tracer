@@ -1,8 +1,8 @@
 #![feature(array_chunks)]
 #![feature(iter_array_chunks)]
-#![feature(type_changing_struct_update)] 
-#![feature(lock_value_accessors)]
-#![feature(slice_as_array)]
+#![feature(type_changing_struct_update)]
+#![feature(float_next_up_down)]
+#![feature(let_chains)]
 
 pub mod bsdfs;
 pub mod bvh;
@@ -22,13 +22,12 @@ use camera::*;
 use integrator::*;
 use scene::*;
 
-
 fn main() {
-//    makes the pc usable for other things while rendering
-//    rayon::ThreadPoolBuilder::new()
-//        .num_threads(7)
-//        .build_global()
-//        .unwrap();
+    //    makes the pc usable for other things while rendering
+    //    rayon::ThreadPoolBuilder::new()
+    //        .num_threads(7)
+    //        .build_global()
+    //        .unwrap();
     for arg in std::env::args().skip(1) {
         let parse_result = parser::parse("scenes", &arg);
 
