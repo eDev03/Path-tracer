@@ -1,0 +1,29 @@
+{
+  "integrator": {
+    "SimplePathIntegrator": {
+      "samples_per_pixel": 64,
+      "max_depth": 16,
+      "mode": "PT"
+    }
+  },
+  "camera": {
+    "fov": 19.5,
+    "image_size": [16, 16],
+    "world_to_camera": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1]
+  },
+  "materials": [
+    {
+      "name": "white",
+      "kind": { "Lambertian": { "albedo": { "Constant": 0.5 } } }
+    }
+  ],
+  "plymeshes": [
+    {
+      "emission": [0.5, 0.5, 0.5],
+      "material": "white",
+      "filename": "icosphere_6.ply",
+      "reverse_normals": true,
+      "scale": 10
+    }
+  ]
+}

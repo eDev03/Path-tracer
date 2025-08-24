@@ -1,0 +1,12 @@
+[package]
+name = "bin"
+edition = "2024"
+
+[dependencies]
+sky = { path = "../sky" }
+math = { path = "../../math" }
+itertools = "*"
+stb_image_write_rust = "1.16.1"
+ogl33 = { version = "0.2.0", features = ["debug_error_checks"] }
+bytemuck = "1.23.0"
+beryllium = "0.13.3"

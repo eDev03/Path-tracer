@@ -1,0 +1,6 @@
+[package]
+name = "sky"
+edition = "2024"
+
+[dependencies]
+math = { path = "../../math" }

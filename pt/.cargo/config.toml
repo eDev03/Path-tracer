@@ -1,0 +1,5 @@
+[build]
+rustflags = ["-C", "target-cpu=native", "-C", "symbol-mangling-version=v0"]
+
+[rust]
+debuginfo-level = 1
