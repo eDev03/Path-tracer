@@ -10,6 +10,7 @@ Navigate into `pt` directory and run `cargo run [params] scene1 scene2 etc`
 Output is in `zout` inside the `pt` directory  
 Example: `cargo run --release veach-mis`  
 Example: `cargo run --release cornell-box cornell-box-guided`  
+Must compile with a nightly toolchain
 
 To edit a scene, make changes to `scene_v3.xml` inside a scene directory, ex: `pt/scenes/cornell-box/scene_v3.xml`  
 Most relevant paramaters are:  
